@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register form</title>
+
+    <!--Boxicons CDN-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for the password toggle -->
+    <style>
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-box input {
+            width: calc(30% - 0px);
+            padding-top: 20px;
+            padding-bottom: 3px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #ccc;
+            font-size: 20px;
+        }
+        .input-box label {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            color: #666;
+            font-size: 18px;
+            font-weight: bold; /* Added font-weight property */
+            transition: 0.5s;
+        }
+        .toggle-password {
+            position: absolute;
+            top: calc(50% + 5px); /* Adjusted top position to align with the cursor */
+            right: 0;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <span class="rotate-bg"></span>
+    <span class="rotate-bg2"></span>
+
+    <div class="form-box login">
+
+        <h2 class="title animation" style="--i:0; --j:21">Login</h2>
+
+        <form action="#">
+
+            <div class="input-box animation" style="--i:1; --j:22">
+                <input type="text" required>
+                <label for=""><b>Username 📝</b></label>
+                <i class='bx bxs-user'></i>
+            </div>
+
+			<!-- Password Toggle -->
+    		<div class="input-box animation" style="--i:20; --j:3">
+        		<input type="password" id="password" required>
+        		<label for="password">Password 🔏</label>
+        		<img src="https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png" width="20" height="20" style="display: inline; margin-left: -1.5%; vertical-align: middle; color: red;" id="togglePassword">
+    		</div>
+
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function() {
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+
+            // Toggle the eye icon
+            if (togglePassword.src.match("https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png")) {
+                togglePassword.src = "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png";
+            } else {
+                togglePassword.src = "https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png";
+            }
+        });
+    </script>
+
+            <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+
+            <div class="linkTxt animation" style="--i:5; --j:25">
+                <p>Don't have an account⁉️ <a href="#" class="register-link">Sign Up</a></p>
+                <p><b>Designed & Developed by </b></p>
+                <p><b><a href="https://hemantkatta.blogspot.com/">💝HEMANT KATTA⚔️</a></b></p>
+            </div>
+            
+        </form>
+    </div>
+
+    
+
+</div>
+
+<!--Script.js-->
+<script src="app.js"></script>
+</body>
+</html>
